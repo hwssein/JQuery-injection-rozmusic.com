@@ -26,7 +26,7 @@
 
     //change the hader element order
     $("header>.container>.row")
-      .css({ flexDirection: "row-reverse" })
+      .css({ flexDirection: "row-reverse", marginBottom:"25px", })
       .children()
       .css({ order: "0" })
       .find(".search")
@@ -70,7 +70,7 @@
         justifyContent: "start",
         gap: "24px",
         backgroundColor: "transparent",
-        padding: "15px 0",
+        padding: "0",
       });
 
     //change div tag to select tag (.daste)
@@ -99,8 +99,8 @@
       .each(function () {
         const selectTag = $(this).siblings("select");
 
-        const firstOpton = $("<option>").text("دسته بندی مطالب").val("");
-        selectTag.prepend(firstOpton);
+        const firstOption = $("<option>").text("دسته بندی مطالب").val("");
+        selectTag.prepend(firstOption);
 
         $(this)
           .children("li")
@@ -164,6 +164,13 @@
 
         $(this).remove();
       });
+
+      // add gap to main container row: first child
+      $("main>.container>.row").children().first().css({
+          display:"flex",
+          flexDirection:"column",
+          gap:"10px",
+      })
 
     //change banner style
     $("main>.container>.row")
@@ -229,7 +236,7 @@
         margin: "0",
         position: "relative",
         width: "100%",
-        height: "308px",
+        height: "305px",
       })
       .children(".row")
       .children()
@@ -330,6 +337,7 @@
         alignItems: "center",
         justifyContent: "start",
         gap: "15px",
+        marginBottom:"20px",
       });
       $(specialOfferContent)
         .children()
